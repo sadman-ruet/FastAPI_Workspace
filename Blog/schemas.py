@@ -5,3 +5,10 @@ class Blog(BaseModel):
     body: str
     published: Optional[bool]
 
+
+class ShowBlog(BaseModel):
+    title: str
+    class Config():
+        # orm_mode = True
+        from_attributes=True
+
