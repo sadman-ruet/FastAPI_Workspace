@@ -12,7 +12,7 @@ class BlogBase(BaseModel):
 class Blog(BlogBase):
     user_id: int
     class Config():
-        orm_mode = True
+        from_attributes = True
 
 class User(BaseModel):
     name:str
@@ -23,14 +23,14 @@ class ShowUser(BaseModel):
     name:str
     email:str
     class Config():
-        orm_mode = True
+        from_attributes = True
 
 class ShowUserForBlog(BaseModel):
     name:str
     email:str
     blogs:List[BlogBase]=[]
     class Config():
-        orm_mode = True
+        from_attributes = True
 
 
 
@@ -40,4 +40,4 @@ class ShowBlog(BaseModel):
     creator: ShowUser
 
     class Config():
-        orm_mode = True
+        from_attributes = True
