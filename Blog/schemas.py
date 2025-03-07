@@ -41,3 +41,17 @@ class ShowBlog(BaseModel):
 
     class Config():
         from_attributes = True
+
+
+class Login(BaseModel):
+    username: str
+    password: str
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: str | None = None
